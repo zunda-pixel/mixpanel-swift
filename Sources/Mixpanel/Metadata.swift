@@ -12,7 +12,7 @@ public struct Metadata: Encodable {
     case eventId = "$mp_event_id"
     case sessionSeqId = "$mp_session_seq_id"
   }
-  
+
   public init(
     sessionId: String,
     sessionStartSec: Date,
@@ -24,11 +24,14 @@ public struct Metadata: Encodable {
     self.eventId = eventId
     self.sessionSeqId = sessionSeqId
   }
-  
+
   public func encode(to encoder: any Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
     try container.encode(self.sessionId, forKey: .sessionId)
-    try container.encode(round(self.sessionStartSec.timeIntervalSince1970), forKey: .sessionStartSec)
+    try container.encode(
+      round(self.sessionStartSec.timeIntervalSince1970),
+      forKey: .sessionStartSec
+    )
     try container.encode(self.eventId, forKey: .eventId)
     try container.encode(self.sessionSeqId, forKey: .sessionSeqId)
   }

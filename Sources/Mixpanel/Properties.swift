@@ -19,7 +19,7 @@ public struct Properties: Encodable {
   public var manufacturer: String
   public var os: String
   public var hadPersistedDistinctId: Bool
-  
+
   public init(
     token: String,
     time: Date,
@@ -59,7 +59,7 @@ public struct Properties: Encodable {
     self.os = os
     self.hadPersistedDistinctId = hadPersistedDistinctId
   }
-  
+
   private enum CodingKeys: String, CodingKey {
     case token
     case time
@@ -80,13 +80,16 @@ public struct Properties: Encodable {
     case os = "$os"
     case hadPersistedDistinctId = "$had_persisted_distinct_id"
   }
-  
+
   public func encode(to encoder: any Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
     try container.encode(self.token, forKey: .token)
     try container.encode(round(self.time.timeIntervalSince1970 * 1000), forKey: .time)
     try container.encodeIfPresent(self.userId, forKey: .userId)
-    try container.encodeIfPresent(self.duration.map { Double(String(format: "%.3f", $0)) }, forKey: .duration)
+    try container.encodeIfPresent(
+      self.duration.map { Double(String(format: "%.3f", $0)) },
+      forKey: .duration
+    )
     try container.encode(self.appVersion, forKey: .appVersion)
     try container.encode(self.screenHeight, forKey: .screenHeight)
     try container.encode(self.screenWidth, forKey: .screenWidth)
@@ -103,5 +106,3 @@ public struct Properties: Encodable {
     try container.encode(self.hadPersistedDistinctId, forKey: .hadPersistedDistinctId)
   }
 }
-
-

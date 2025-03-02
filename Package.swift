@@ -12,7 +12,7 @@ let package = Package(
     .library(
       name: "Mixpanel",
       targets: ["Mixpanel"]
-    ),
+    )
   ],
   dependencies: [
     .package(url: "https://github.com/apple/swift-http-types", from: "1.3.0"),
@@ -30,7 +30,7 @@ let package = Package(
     .testTarget(
       name: "MixpanelTests",
       dependencies: [
-        .target(name: "Mixpanel"),
+        .target(name: "Mixpanel")
       ]
     ),
   ]

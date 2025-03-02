@@ -3,7 +3,7 @@ public struct Event: Encodable {
   public var event: String
   public var properties: Properties
   public var metadata: Metadata
-  
+
   public init(
     id: UInt,
     event: String,
@@ -15,7 +15,7 @@ public struct Event: Encodable {
     self.properties = properties
     self.metadata = metadata
   }
-  
+
   private enum CodingKeys: String, CodingKey {
     case id
     case event
