@@ -1,15 +1,14 @@
 import MemberwiseInit
 
-@MemberwiseInit(.public)
-public struct PostEvent: Encodable {
-  public var id: UInt
-  public var event: String
-  public var properties: Properties
-  public var metadata: Metadata
+struct PostEvent: Encodable {
+  var id: UInt
+  var name: String
+  var properties: Properties
+  var metadata: Metadata
 
   private enum CodingKeys: String, CodingKey {
     case id
-    case event
+    case name = "event"
     case properties
     case metadata = "$mp_metadata"
   }

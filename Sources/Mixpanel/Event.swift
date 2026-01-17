@@ -1,7 +1,9 @@
-import Foundation
+import MemberwiseInit
 
+@MemberwiseInit(.public)
 public struct Event {
+  public var id: UInt
   public var name: String
-  public var sessionId: String
-  public var timestamp: Date
+  public var properties: Properties
+  public var metadata: Metadata
 }
