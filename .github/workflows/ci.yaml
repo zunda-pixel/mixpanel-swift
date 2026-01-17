@@ -16,3 +16,5 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: swift format lint -r -p -s .
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
