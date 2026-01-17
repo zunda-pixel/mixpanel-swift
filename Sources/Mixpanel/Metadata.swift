@@ -1,5 +1,7 @@
 import Foundation
+import MemberwiseInit
 
+@MemberwiseInit(.public)
 public struct Metadata: Encodable {
   public var sessionId: String
   public var sessionStartSec: Date
@@ -11,18 +13,6 @@ public struct Metadata: Encodable {
     case sessionStartSec = "$mp_session_start_sec"
     case eventId = "$mp_event_id"
     case sessionSeqId = "$mp_session_seq_id"
-  }
-
-  public init(
-    sessionId: String,
-    sessionStartSec: Date,
-    eventId: String,
-    sessionSeqId: Int
-  ) {
-    self.sessionId = sessionId
-    self.sessionStartSec = sessionStartSec
-    self.eventId = eventId
-    self.sessionSeqId = sessionSeqId
   }
 
   public func encode(to encoder: any Encoder) throws {

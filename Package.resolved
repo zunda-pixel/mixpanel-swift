@@ -1,5 +1,5 @@
 {
-  "originHash" : "329c34447c287858f55ef34b33df788cefef510a4bc0c25de843a5050c127089",
+  "originHash" : "85d7e32e277b9762c563d2c7be857c73b2aa6b727f8ca3f16333f494a6c73d0b",
   "pins" : [
     {
       "identity" : "http-client",
@@ -17,6 +17,24 @@
       "state" : {
         "revision" : "45eb0224913ea070ec4fba17291b9e7ecf4749ca",
         "version" : "1.5.1"
+      }
+    },
+    {
+      "identity" : "swift-memberwise-init-macro",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gohanlon/swift-memberwise-init-macro.git",
+      "state" : {
+        "revision" : "47a2bdf45f1567e7324438f8482e362ee1c3fb44",
+        "version" : "0.5.2"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax",
+      "state" : {
+        "revision" : "0687f71944021d616d34d922343dcef086855920",
+        "version" : "600.0.1"
       }
     }
   ],
