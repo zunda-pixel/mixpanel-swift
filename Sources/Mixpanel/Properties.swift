@@ -53,8 +53,8 @@ extension PostEvent {
         forKey: .duration
       )
       try container.encodeIfPresent(self.appVersion, forKey: .appVersion)
-      try container.encodeIfPresent(self.screenSize?.width, forKey: .screenHeight)
-      try container.encodeIfPresent(self.screenSize?.height, forKey: .screenWidth)
+      try container.encodeIfPresent(self.screenSize?.width, forKey: .screenWidth)
+      try container.encodeIfPresent(self.screenSize?.height, forKey: .screenHeight)
       try container.encodeIfPresent(self.appBuildNumber, forKey: .appBuildNumber)
       try container.encodeIfPresent(self.libraryVersion, forKey: .libraryVersion)
       try container.encodeIfPresent(self.radio, forKey: .radio)
