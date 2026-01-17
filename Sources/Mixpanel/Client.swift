@@ -9,16 +9,16 @@ public struct Client<HTTPClient: HTTPClientProtocol> {
   public var baseUrl: URL = URL(string: "https://api.mixpanel.com")!
   public var httpClient: HTTPClient
   public var token: String
-  public var os: OS
-  public var deviceId: String
-  public var device: Device
-  public var screenSize: CGSize
+  public var os: OS?
+  public var deviceId: String?
+  public var device: Device?
+  public var screenSize: CGSize?
   public var userId: String?
-  public var appVersion: String
-  public var appBuildNumber: String
-  public var libraryVersion:String
-  public var radio: String
-  public var useWifi: Bool
+  public var appVersion: String?
+  public var appBuildNumber: String?
+  public var libraryVersion:String?
+  public var radio: String?
+  public var useWifi: Bool?
 
   public func track(
     events: [Event]
@@ -38,19 +38,19 @@ public struct Client<HTTPClient: HTTPClientProtocol> {
         properties: PostEvent.Properties(
           token: token,
           time: event.properties.time,
+          distinctId: event.properties.distinctId,
+          hadPersistedDistinctId: event.properties.hadPersistedDistinctId,
           userId: userId,
           duration: event.properties.duration,
           appVersion: appVersion,
           screenSize: screenSize,
           deviceId: deviceId,
-          distinctId: event.properties.distinctId,
           appBuildNumber: appBuildNumber,
           libraryVersion: libraryVersion,
           radio: radio,
           useWifi: useWifi,
           device: device,
-          os: os,
-          hadPersistedDistinctId: event.properties.hadPersistedDistinctId
+          os: os
         ),
         metadata: event.metadata
       )

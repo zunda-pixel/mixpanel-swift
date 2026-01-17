@@ -1,5 +1,6 @@
 import MemberwiseInit
 
+@MemberwiseInit
 struct PostEvent: Encodable {
   var id: UInt
   var name: String
