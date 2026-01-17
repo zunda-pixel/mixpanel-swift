@@ -14,7 +14,7 @@ public struct Client<HTTPClient: HTTPClientProtocol> {
   }
 
   public func track(
-    events: [Event]
+    events: [PostEvent]
   ) async throws {
     let request = HTTPRequest(
       method: .post,
