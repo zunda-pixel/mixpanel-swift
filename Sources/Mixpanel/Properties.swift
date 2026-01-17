@@ -68,6 +68,7 @@ extension PostEvent {
 }
 
 extension Event {
+  @MemberwiseInit(.public)
   public struct Properties {
     public var time: Date
     public var duration: TimeInterval?

@@ -35,7 +35,7 @@ public struct Client<HTTPClient: HTTPClientProtocol> {
       PostEvent(
         id: event.id,
         name: event.name,
-        properties: .init(
+        properties: PostEvent.Properties(
           token: token,
           time: event.properties.time,
           userId: userId,
