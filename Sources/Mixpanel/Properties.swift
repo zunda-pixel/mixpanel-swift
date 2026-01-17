@@ -19,7 +19,7 @@ extension PostEvent {
     var useWifi: Bool?
     var device: Device?
     var os: OS?
-    
+
     private enum CodingKeys: String, CodingKey {
       case token
       case time
@@ -40,7 +40,7 @@ extension PostEvent {
       case os = "$os"
       case hadPersistedDistinctId = "$had_persisted_distinct_id"
     }
-    
+
     func encode(to encoder: any Encoder) throws {
       var container = encoder.container(keyedBy: CodingKeys.self)
       try container.encode(self.token, forKey: .token)

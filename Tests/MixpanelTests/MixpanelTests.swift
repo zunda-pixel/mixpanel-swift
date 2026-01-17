@@ -1,6 +1,6 @@
-import Testing
-import Mixpanel
 import Foundation
+import Mixpanel
+import Testing
 
 @Suite
 struct MixpanelTests {
@@ -23,14 +23,24 @@ struct MixpanelTests {
       radio: "AT&T",
       useWifi: true
     )
-    
+
     try await client.track(events: [
       Event(
         id: 1,
         name: "app_open",
-        properties: Event.Properties(time: .now, duration: nil, distinctId: UUID().uuidString, hadPersistedDistinctId: false),
-        metadata: Metadata(sessionId: UUID().uuidString, sessionStartSec: .now, eventId: UUID().uuidString, sessionSeqId: 1)
-      ),
+        properties: Event.Properties(
+          time: .now,
+          duration: nil,
+          distinctId: UUID().uuidString,
+          hadPersistedDistinctId: false
+        ),
+        metadata: Metadata(
+          sessionId: UUID().uuidString,
+          sessionStartSec: .now,
+          eventId: UUID().uuidString,
+          sessionSeqId: 1
+        )
+      )
     ])
   }
 }

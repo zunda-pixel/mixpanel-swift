@@ -16,7 +16,7 @@ public struct Client<HTTPClient: HTTPClientProtocol> {
   public var userId: String?
   public var appVersion: String?
   public var appBuildNumber: String?
-  public var libraryVersion:String?
+  public var libraryVersion: String?
   public var radio: String?
   public var useWifi: Bool?
 
